@@ -1,134 +1,72 @@
-#include <algorithm>
 #include <iostream>
-#include <pthread.h>
-#include <random>
-#include <stdio.h>
-#include <stdlib.h>
-#include <fstream>
-
-std::ofstream out;
-
-pthread_mutex_t mutex_write;
-pthread_mutex_t mutex_output;
-
-std::vector<int> *buffer = nullptr;
-
-unsigned int seed = 101;
-
-int get_random_int(int min, int max) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dist(min, max);
-    return dist(gen);
-}
-
-void write_data(int number_of_writer, int data, int index) {
-    int old_data = (*buffer)[index];
-
-    pthread_mutex_lock(&mutex_output);
-    out << "Writer " << number_of_writer << ": Change value in cell [" << index << "] from " << old_data <<" to " << data << "\n";
-    printf("Writer %d: Change value in cell [%d] from %d to %d\n", number_of_writer, index, old_data, data);
-    pthread_mutex_unlock(&mutex_output);
-
-    (*buffer)[index] = data;
-    std::sort(buffer->begin(), buffer->end());
-}
-
-void *writer(void *param) {
-    int number_of_writer = *((int *) param);
-    int data = get_random_int(1, 20);
-    int index = get_random_int(0, buffer->size() - 1);
-
-    pthread_mutex_lock(&mutex_write);
-    write_data(number_of_writer, data, index);
-    pthread_mutex_unlock(&mutex_write);
-
-    return nullptr;
-}
-
-void read_data(int number_of_reader) {
-    int index = get_random_int(0, buffer->size() - 1);
-    int data = (*buffer)[index];
-
-    pthread_mutex_lock(&mutex_output);
-    out << "Reader " << number_of_reader << ": Read value = " << data << " from cell [" << index << "]\n";
-    printf("Reader %d: Read value = %d from cell [%d]\n", number_of_reader, data, index);
-    pthread_mutex_unlock(&mutex_output);
-}
-
-void *reader(void *param) {
-    int number_of_reader = *((int *) param);
-
-    read_data(number_of_reader);
-
-    return nullptr;
-}
-
+#include  "multithreading_solution1.h"
+//#include "multithreading_solution2.h"
+//#include"multithreading_solution3.h"
 
 int main(int argv, char *argc[]) {
-    int number_of_readers;
-    int number_of_writers;
-    int buf_size;
+    int number_of_readers = 0;
+    int number_of_writers = 0;
+    int buf_size = 0;
     std::string output_file_path;
+    std::string input_file_path;
+    int instruction;
+    std::ifstream fin;
 
     if (argv > 1) {
-        number_of_readers = std::stoi(*(argc + 1));
-        number_of_writers = std::stoi(*(argc + 2));
-        buf_size = std::stoi(*(argc + 3));
-        output_file_path = *(argc + 4);
+        instruction = std::stoi(*(argc + 1));
+        switch (instruction) {
+            case 1:
+                number_of_readers = std::stoi(*(argc + 2));
+                number_of_writers = std::stoi(*(argc + 3));
+                buf_size = std::stoi(*(argc + 4));
+                output_file_path = *(argc + 5);
+                break;
+            case 2:
+                input_file_path = *(argc + 2);
+                fin.open(input_file_path);
+                if(fin.is_open()) {
+                    std::cout << "File " << input_file_path << " was opened for reading\n";
+                    fin >> number_of_readers >> number_of_writers >> buf_size >> output_file_path;
+                }
+                break;
+            default:
+                std::cout << "Incorrect instruction. Enter 1 or 2.\n";
+                return 0;
+        }
     } else {
-        std::cout << "Enter number of reader threads\n";
-        std::cin >> number_of_readers;
-        std::cout << "Enter number of writer threads\n";
-        std::cin >> number_of_writers;
-        std::cout << "Enter the size of buffer\n";
-        std::cin >> buf_size;
-        std::cout << "Enter the path of the output file\n";
-        std::cin >> output_file_path;
+        std::cout << "Enter 1 - for reading parameters from the console, 2 - for using values from the config name (then you need to enter path to the config file)\n";
+        std::cin >> instruction;
+        switch (instruction) {
+            case 1:
+                std::cout << "Enter number of reader threads\n";
+                std::cin >> number_of_readers;
+                std::cout << "Enter number of writer threads\n";
+                std::cin >> number_of_writers;
+                std::cout << "Enter the size of buffer\n";
+                std::cin >> buf_size;
+                std::cout << "Enter the path of the output file\n";
+                std::cin >> output_file_path;
+                break;
+            case 2:
+                std::cout << "Enter the path to the config file.\n";
+                std::cin >> input_file_path;
+                fin.open(input_file_path);
+                if(fin.is_open()) {
+                    std::cout << "File " << input_file_path << " was opened for reading\n";
+                    fin >> number_of_readers >> number_of_writers >> buf_size >> output_file_path;
+                }
+                break;
+            default:
+                std::cout << "Incorrect instruction. Enter 1 or 2.\n";
+                return 0;
+        }
     }
 
-    out.open(output_file_path);
-    if (out.is_open())
-    {
-        std::cout << "The file is successfully opened for writing" << std::endl;
-    } else {
-        std::cout << "There is incorrect path " << output_file_path << "\n";
-    }
+    start_program_mutex(number_of_readers,  number_of_writers, buf_size, output_file_path);
 
-    srand(seed);
+    //start_program_rwlock(number_of_readers,  number_of_writers, buf_size, output_file_path);
 
-    buffer = new std::vector<int>(buf_size);
-    for (int i = 0; i < buf_size; ++i) {
-        (*buffer)[i] = get_random_int(-10, 10);
-    }
-
-    pthread_mutex_init(&mutex_write, nullptr);
-
-    pthread_mutex_init(&mutex_output, nullptr);
-
-    pthread_t thread_writers[number_of_writers];
-    int writers[number_of_writers];
-
-    for (int i = 0; i < number_of_writers; i++) {
-        writers[i] = i + 1;
-        pthread_create(&thread_writers[i], nullptr, writer, (void *) &writers[i]);
-    }
-
-    pthread_t thread_readers[number_of_readers];
-    int readers[number_of_readers];
-
-    for (int i = 0; i < number_of_readers; i++) {
-        readers[i] = i + 1;
-        pthread_create(&thread_readers[i], nullptr, reader, (void *) &readers[i]);
-    }
-
-    for (auto &x: thread_writers)
-        pthread_join(x, nullptr);
-
-    for (auto &x: thread_readers)
-        pthread_join(x, nullptr);
-
-    out.close();
+    //start_program_omp(number_of_readers,  number_of_writers, buf_size, output_file_path);
 
     return 0;
 }
