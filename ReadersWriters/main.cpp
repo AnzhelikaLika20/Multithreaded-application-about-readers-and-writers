@@ -2,13 +2,12 @@
 #include <iostream>
 #include <pthread.h>
 #include <random>
-#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <fstream>
 
-//the mutex for write
-//the mutex for output
+std::ofstream out;
+
 pthread_mutex_t mutex_write;
 pthread_mutex_t mutex_output;
 
@@ -23,11 +22,11 @@ int get_random_int(int min, int max) {
     return dist(gen);
 }
 
-void write_data(std::vector<int> *buffer, int number_of_writer, int data, int index) {
-
+void write_data(int number_of_writer, int data, int index) {
     int old_data = (*buffer)[index];
 
     pthread_mutex_lock(&mutex_output);
+    out << "Writer " << number_of_writer << ": Change value in cell [" << index << "] from " << old_data <<" to " << data << "\n";
     printf("Writer %d: Change value in cell [%d] from %d to %d\n", number_of_writer, index, old_data, data);
     pthread_mutex_unlock(&mutex_output);
 
@@ -41,16 +40,18 @@ void *writer(void *param) {
     int index = get_random_int(0, buffer->size() - 1);
 
     pthread_mutex_lock(&mutex_write);
-    write_data(buffer, number_of_writer, data, index);
+    write_data(number_of_writer, data, index);
     pthread_mutex_unlock(&mutex_write);
 
     return nullptr;
 }
 
-void read_data(std::vector<int> *buffer, int number_of_reader) {
+void read_data(int number_of_reader) {
     int index = get_random_int(0, buffer->size() - 1);
     int data = (*buffer)[index];
+
     pthread_mutex_lock(&mutex_output);
+    out << "Reader " << number_of_reader << ": Read value = " << data << " from cell [" << index << "]\n";
     printf("Reader %d: Read value = %d from cell [%d]\n", number_of_reader, data, index);
     pthread_mutex_unlock(&mutex_output);
 }
@@ -58,7 +59,7 @@ void read_data(std::vector<int> *buffer, int number_of_reader) {
 void *reader(void *param) {
     int number_of_reader = *((int *) param);
 
-    read_data(buffer, number_of_reader);
+    read_data(number_of_reader);
 
     return nullptr;
 }
@@ -69,6 +70,7 @@ int main(int argv, char *argc[]) {
     int number_of_writers;
     int buf_size;
     std::string output_file_path;
+
     if (argv > 1) {
         number_of_readers = std::stoi(*(argc + 1));
         number_of_writers = std::stoi(*(argc + 2));
@@ -83,6 +85,14 @@ int main(int argv, char *argc[]) {
         std::cin >> buf_size;
         std::cout << "Enter the path of the output file\n";
         std::cin >> output_file_path;
+    }
+
+    out.open(output_file_path);
+    if (out.is_open())
+    {
+        std::cout << "The file is successfully opened for writing" << std::endl;
+    } else {
+        std::cout << "There is incorrect path " << output_file_path << "\n";
     }
 
     srand(seed);
@@ -117,6 +127,8 @@ int main(int argv, char *argc[]) {
 
     for (auto &x: thread_readers)
         pthread_join(x, nullptr);
+
+    out.close();
 
     return 0;
 }
