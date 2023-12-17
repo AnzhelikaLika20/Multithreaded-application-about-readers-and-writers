@@ -1,0 +1,3 @@
+C:/Users/Zver/Desktop/HSE/AVS/IDZ4/ReadersWriters/cmake-build-debug/CMakeFiles/ReadersWriters.dir
+C:/Users/Zver/Desktop/HSE/AVS/IDZ4/ReadersWriters/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Zver/Desktop/HSE/AVS/IDZ4/ReadersWriters/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,40 @@
+Writer 7: Change value in cell [13] from 8 to 3
+Reader 12: Read value = -2 from cell [15
+Reader 20: Read value = -4 from cell [3
+Reader 20: Read value = -4 from cell [9
+Reader 20: Read value = -2 from cell [15
+Reader 20: Read value = -5 from cell [11
+Reader 20: Read value = -4 from cell [10
+Reader 20: Read value = -4 from cell [9
+Reader 20: Read value = 1 from cell [12
+Reader 20: Read value = -2 from cell [15
+Reader 20: Read value = -2 from cell [5
+Reader 20: Read value = 7 from cell [8
+Reader 20: Read value = 8 from cell [4
+Reader 20: Read value = -4 from cell [9
+Reader 20: Read value = -2 from cell [5
+Reader 20: Read value = -10 from cell [17
+Reader 20: Read value = -4 from cell [9
+Reader 20: Read value = 10 from cell [19
+Reader 20: Read value = 2 from cell [18
+Reader 20: Read value = 8 from cell [13
+Reader 20: Read value = -2 from cell [15
+Writer 11: Change value in cell [0] from -10 to 3
+Writer 16: Change value in cell [10] from 1 to 8
+Writer 20: Change value in cell [15] from 7 to 15
+Writer 20: Change value in cell [6] from -1 to 5
+Writer 20: Change value in cell [18] from 10 to 11
+Writer 20: Change value in cell [16] from 8 to 8
+Writer 20: Change value in cell [19] from 15 to 1
+Writer 20: Change value in cell [8] from 0 to 15
+Writer 20: Change value in cell [16] from 8 to 14
+Writer 20: Change value in cell [17] from 11 to 13
+Writer 20: Change value in cell [3] from -4 to 10
+Writer 20: Change value in cell [1] from -4 to 11
+Writer 20: Change value in cell [12] from 6 to 5
+Writer 20: Change value in cell [3] from -2 to 17
+Writer 20: Change value in cell [19] from 17 to 1
+Writer 20: Change value in cell [13] from 7 to 12
+Writer 20: Change value in cell [6] from 1 to 9
+Writer 20: Change value in cell [15] from 11 to 5
+Writer 20: Change value in cell [14] from 9 to 4

@@ -1,0 +1,30 @@
+Writer 8: Change value in cell [1] from -2 to 18
+Writer 11: Change value in cell [0] from -10 to 14
+Writer 15: Change value in cell [1] from -6 to 12
+Reader 15: Read value = 4 from cell [4
+Reader 15: Read value = 4 from cell [4
+Reader 15: Read value = -1 from cell [8
+Reader 15: Read value = -6 from cell [6
+Reader 15: Read value = -2 from cell [1
+Reader 15: Read value = 2 from cell [5
+Reader 15: Read value = -1 from cell [8
+Reader 15: Read value = -6 from cell [6
+Reader 15: Read value = -1 from cell [8
+Reader 15: Read value = -1 from cell [8
+Reader 15: Read value = -1 from cell [8
+Reader 15: Read value = -7 from cell [2
+Reader 15: Read value = -1 from cell [8
+Reader 6: Read value = 2 from cell [5
+Reader 10: Read value = 2 from cell [5
+Writer 15: Change value in cell [3] from 0 to 8
+Writer 15: Change value in cell [0] from -7 to 3
+Writer 15: Change value in cell [1] from -1 to 18
+Writer 15: Change value in cell [2] from 3 to 12
+Writer 15: Change value in cell [0] from -3 to 17
+Writer 15: Change value in cell [9] from 18 to 9
+Writer 15: Change value in cell [9] from 18 to 10
+Writer 15: Change value in cell [4] from 9 to 3
+Writer 15: Change value in cell [2] from 4 to 6
+Writer 15: Change value in cell [5] from 10 to 18
+Writer 15: Change value in cell [2] from 6 to 8
+Writer 15: Change value in cell [9] from 18 to 19
