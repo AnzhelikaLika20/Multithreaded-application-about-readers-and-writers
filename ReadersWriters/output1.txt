@@ -1,0 +1,40 @@
+Reader 1: Read value = -9 from cell [7]
+Reader 31: Read value = 20 from cell [39]
+Reader 19: Read value = 9 from cell [32]
+Writer 0: Change value in cell [12] from -4 to 0
+Writer 8: Change value in cell [23] from 2 to 8
+Reader 3: Read value = 10 from cell [33]
+Reader 7: Read value = 2 from cell [23]
+Reader 23: Read value = 15 from cell [37]
+Reader 27: Read value = 2 from cell [23]
+Reader 25: Read value = 14 from cell [36]
+Reader 35: Read value = -2 from cell [17]
+Reader 29: Read value = 18 from cell [38]
+Reader 33: Read value = 3 from cell [25]
+Reader 9: Read value = 4 from cell [26]
+Reader 37: Read value = 0 from cell [21]
+Reader 39: Read value = -4 from cell [12]
+Reader 5: Read value = -2 from cell [17]
+Reader 17: Read value = -6 from cell [9]
+Reader 13: Read value = -1 from cell [20]
+Reader 15: Read value = -3 from cell [13]
+Reader 11: Read value = 3 from cell [25]
+Reader 21: Read value = -6 from cell [9]
+Writer 34: Change value in cell [33] from 10 to -9
+Writer 4: Change value in cell [13] from -3 to -8
+Writer 26: Change value in cell [6] from -10 to -5
+Writer 16: Change value in cell [25] from 3 to -9
+Writer 14: Change value in cell [3] from -12 to 5
+Writer 20: Change value in cell [31] from 8 to -6
+Writer 2: Change value in cell [4] from -12 to 1
+Writer 30: Change value in cell [19] from -1 to -15
+Writer 24: Change value in cell [2] from -15 to 1
+Writer 22: Change value in cell [22] from 0 to 11
+Writer 28: Change value in cell [23] from 1 to -4
+Writer 32: Change value in cell [0] from -18 to 7
+Writer 36: Change value in cell [21] from 0 to 9
+Writer 38: Change value in cell [33] from 11 to 5
+Writer 10: Change value in cell [9] from -6 to -2
+Writer 18: Change value in cell [31] from 9 to -18
+Writer 6: Change value in cell [6] from -9 to 6
+Writer 12: Change value in cell [2] from -14 to 3

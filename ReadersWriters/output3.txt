@@ -1,0 +1,45 @@
+Writer 1: Change value in cell [17] from 15 to 8
+Writer 10: Change value in cell [2] from -14 to -14
+Writer 2: Change value in cell [9] from 2 to -9
+Writer 4: Change value in cell [8] from -3 to -6
+Writer 20: Change value in cell [7] from -4 to -18
+Reader 1: Read value = -7 from cell [6]
+Reader 12: Read value = 15 from cell [18]
+Writer 8: Change value in cell [2] from -14 to -19
+Writer 9: Change value in cell [12] from 6 to -7
+Writer 3: Change value in cell [2] from -14 to 2
+Writer 11: Change value in cell [1] from -14 to -10
+Writer 12: Change value in cell [15] from 8 to -12
+Writer 13: Change value in cell [16] from 11 to -16
+Writer 14: Change value in cell [8] from -3 to 16
+Writer 15: Change value in cell [8] from -3 to -17
+Writer 16: Change value in cell [17] from 15 to 11
+Writer 17: Change value in cell [17] from 15 to 6
+Writer 18: Change value in cell [5] from -11 to 6
+Writer 5: Change value in cell [18] from 15 to -12
+Writer 19: Change value in cell [17] from 15 to -8
+Writer 22: Change value in cell [5] from -11 to 10
+Writer 21: Change value in cell [1] from -14 to -8
+Writer 24: Change value in cell [19] from 16 to 15
+Writer 23: Change value in cell [7] from -4 to 10
+Writer 25: Change value in cell [1] from -14 to 9
+Writer 26: Change value in cell [13] from 7 to 7
+Writer 28: Change value in cell [19] from 16 to -5
+Writer 30: Change value in cell [12] from 6 to 14
+Writer 27: Change value in cell [2] from -14 to 10
+Writer 29: Change value in cell [19] from 16 to 13
+Writer 6: Change value in cell [2] from -14 to 8
+Reader 3: Read value = 15 from cell [17]
+Reader 2: Read value = 8 from cell [15]
+Reader 4: Read value = 8 from cell [14]
+Reader 5: Read value = 3 from cell [10]
+Reader 6: Read value = 8 from cell [15]
+Reader 7: Read value = 3 from cell [11]
+Reader 8: Read value = -4 from cell [7]
+Reader 9: Read value = 8 from cell [15]
+Reader 10: Read value = 16 from cell [19]
+Reader 11: Read value = 3 from cell [10]
+Writer 7: Change value in cell [9] from 2 to 4
+Reader 13: Read value = 11 from cell [16]
+Reader 14: Read value = 3 from cell [10]
+Reader 15: Read value = -13 from cell [3]

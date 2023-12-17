@@ -1,0 +1,60 @@
+Writer 1: Change value in cell [4] from -3 to 11
+Writer 2: Change value in cell [3] from -5 to 3
+Writer 8: Change value in cell [7] from 7 to 17
+Writer 10: Change value in cell [0] from -15 to 10
+Writer 5: Change value in cell [3] from -5 to 17
+Reader 4: Read value = 6 from cell [5]
+Reader 14: Read value = 7 from cell [6]
+Reader 19: Read value = 6 from cell [5]
+Writer 9: Change value in cell [7] from 7 to 3
+Reader 31: Read value = -15 from cell [0]
+Writer 4: Change value in cell [7] from 7 to 9
+Writer 12: Change value in cell [4] from -3 to 13
+Writer 13: Change value in cell [6] from 7 to -13
+Writer 14: Change value in cell [1] from -9 to 5
+Writer 15: Change value in cell [3] from -5 to 15
+Writer 16: Change value in cell [3] from -5 to 17
+Writer 17: Change value in cell [5] from 6 to 9
+Writer 18: Change value in cell [8] from 7 to -8
+Writer 19: Change value in cell [1] from -9 to 8
+Writer 20: Change value in cell [1] from -9 to 11
+Reader 1: Read value = 7 from cell [7]
+Reader 2: Read value = -6 from cell [2]
+Reader 3: Read value = -5 from cell [3]
+Writer 6: Change value in cell [8] from 7 to 16
+Reader 5: Read value = 6 from cell [5]
+Reader 6: Read value = 6 from cell [5]
+Reader 7: Read value = -5 from cell [3]
+Reader 8: Read value = -3 from cell [4]
+Reader 9: Read value = 7 from cell [6]
+Reader 10: Read value = -6 from cell [2]
+Reader 11: Read value = -9 from cell [1]
+Reader 12: Read value = 6 from cell [5]
+Reader 13: Read value = 7 from cell [6]
+Writer 7: Change value in cell [6] from 7 to 1
+Reader 15: Read value = -5 from cell [3]
+Reader 16: Read value = 7 from cell [8]
+Reader 17: Read value = -5 from cell [3]
+Reader 18: Read value = 7 from cell [6]
+Writer 3: Change value in cell [4] from -3 to 4
+Reader 20: Read value = -9 from cell [1]
+Reader 21: Read value = 6 from cell [5]
+Reader 22: Read value = 7 from cell [6]
+Reader 23: Read value = 6 from cell [5]
+Reader 24: Read value = 7 from cell [6]
+Reader 25: Read value = 7 from cell [6]
+Reader 26: Read value = 16 from cell [9]
+Reader 27: Read value = -6 from cell [2]
+Reader 28: Read value = 7 from cell [6]
+Reader 29: Read value = 7 from cell [6]
+Reader 30: Read value = -9 from cell [1]
+Writer 11: Change value in cell [1] from -9 to -3
+Reader 32: Read value = -5 from cell [3]
+Reader 33: Read value = -15 from cell [0]
+Reader 34: Read value = 7 from cell [6]
+Reader 35: Read value = 16 from cell [9]
+Reader 36: Read value = -9 from cell [1]
+Reader 37: Read value = -5 from cell [3]
+Reader 38: Read value = 7 from cell [7]
+Reader 39: Read value = 7 from cell [8]
+Reader 40: Read value = -6 from cell [2]
