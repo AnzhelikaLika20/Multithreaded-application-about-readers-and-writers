@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_ReadersWriters: phony || CMakeFiles/Read
 
 build CMakeFiles/ReadersWriters.dir/main.cpp.obj: CXX_COMPILER__ReadersWriters_Debug C$:/Users/Zver/Desktop/HSE/AVS/IDZ4/ReadersWriters/main.cpp || cmake_object_order_depends_target_ReadersWriters
   DEP_FILE = CMakeFiles\ReadersWriters.dir\main.cpp.obj.d
-  FLAGS = -fopenmp -g -fdiagnostics-color=always -std=gnu++20
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ReadersWriters.dir
   OBJECT_FILE_DIR = CMakeFiles\ReadersWriters.dir
 
@@ -64,7 +64,7 @@ build CMakeFiles/ReadersWriters.dir/main.cpp.obj: CXX_COMPILER__ReadersWriters_D
 # Link the executable ReadersWriters.exe
 
 build ReadersWriters.exe: CXX_EXECUTABLE_LINKER__ReadersWriters_Debug CMakeFiles/ReadersWriters.dir/main.cpp.obj
-  FLAGS = -fopenmp -g
+  FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ReadersWriters.dir
   POST_BUILD = cd .

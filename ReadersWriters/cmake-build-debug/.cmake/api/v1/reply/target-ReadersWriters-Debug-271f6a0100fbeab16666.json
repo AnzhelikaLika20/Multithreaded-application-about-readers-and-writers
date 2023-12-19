@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -38,10 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -fopenmp -g -fdiagnostics-color=always"
-				},
-				{
-					"fragment" : "-std=gnu++20"
+					"fragment" : "-g -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -51,7 +48,7 @@
 				[
 					1
 				],
-				"standard" : "20"
+				"standard" : "17"
 			},
 			"sourceIndexes" : 
 			[
@@ -65,7 +62,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-fopenmp -g",
+				"fragment" : "-g",
 				"role" : "flags"
 			},
 			{
